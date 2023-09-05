@@ -1,9 +1,11 @@
 import { useState } from "react";
+
 import {
     signInAuthUserWithEmailAndPassword,
     createUserDocumentFromAuth,
     signInWithGooglePopup
 } from "../../utils/fitebase/firebase.utils";
+
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
 
@@ -23,18 +25,15 @@ const SignInForm = () => {
     }
 
     const signInWithGoogle = async () => {
-        const { user } = await signInWithGooglePopup();
-        await createUserDocumentFromAuth(user)
+        await signInWithGooglePopup();
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            const response = await signInAuthUserWithEmailAndPassword(email, password);
-
+            await signInAuthUserWithEmailAndPassword(email, password);
             resetFormFields();
-            alert('Account created');
 
         } catch (error) {
             switch (error.code) {
