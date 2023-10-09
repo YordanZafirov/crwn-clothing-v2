@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled from 'styled-components';
+
+import { Link } from 'react-router-dom';
 
 export const CategoryPreviewContainer = styled.div`
   display: flex;
@@ -7,14 +8,14 @@ export const CategoryPreviewContainer = styled.div`
   margin-bottom: 30px;
 `;
 
-export const CategoryPreviewTitle = styled(Link)`
-    font-size: 28px;
-    margin-bottom: 25px;
-    cursor: pointer;
+export const Title = styled(Link)`
+  font-size: 28px;
+  margin-bottom: 25px;
+  cursor: pointer;
 `;
 
-export const CategoryPreviewItems = styled.div`
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 20px;
+export const Preview = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
 `;
